@@ -28,4 +28,9 @@ export class TodoService {
     let url: string = this.todoUrl.concat(todo.id.toString())
     return this.http.put(url, todo, httpOptions)
   }
+
+  deleteTodo(todo): Observable<Todo>{
+    let url: string = this.todoUrl.concat(todo.id.toString())
+    return this.http.delete<Todo>(url, httpOptions);
+  }
 }
